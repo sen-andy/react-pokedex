@@ -10,7 +10,6 @@ function Pokedex({ name }) {
     const [ loading, setLoading ] = useState(false)
 
     useEffect(() => {
-        console.log("use effect ran")
         // Prevents fetch triggering before it has pokemon value
         if (name !== "") {
             // Flag that stops execution of a console.log or other data append
@@ -21,7 +20,6 @@ function Pokedex({ name }) {
                     setData(data)
                     // allows execution of other code to occur
                     setLoading(false)
-                    loading ? null : console.log(data)
                 })
                 .catch(err => console.log(err))
         }
